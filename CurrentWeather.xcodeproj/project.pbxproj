@@ -9,11 +9,17 @@
 /* Begin PBXBuildFile section */
 		E1A0F2E71DE825F400642AB0 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E1A0F2E61DE825F400642AB0 /* main.m */; };
 		E1A0F2EA1DE825F400642AB0 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E1A0F2E91DE825F400642AB0 /* AppDelegate.m */; };
-		E1A0F2ED1DE825F400642AB0 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E1A0F2EC1DE825F400642AB0 /* ViewController.m */; };
+		E1A0F2ED1DE825F400642AB0 /* WeatherViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E1A0F2EC1DE825F400642AB0 /* WeatherViewController.m */; };
 		E1A0F2F01DE825F400642AB0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E1A0F2EE1DE825F400642AB0 /* Main.storyboard */; };
 		E1A0F2F31DE825F400642AB0 /* CurrentWeather.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E1A0F2F11DE825F400642AB0 /* CurrentWeather.xcdatamodeld */; };
 		E1A0F2F51DE825F400642AB0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E1A0F2F41DE825F400642AB0 /* Assets.xcassets */; };
 		E1A0F2F81DE825F400642AB0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E1A0F2F61DE825F400642AB0 /* LaunchScreen.storyboard */; };
+		E1A0F3011DE826FF00642AB0 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E1A0F3001DE826FF00642AB0 /* CoreLocation.framework */; };
+		E1A0F3031DE8494900642AB0 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E1A0F3021DE8494900642AB0 /* QuartzCore.framework */; };
+		E1A0F3071DE8638A00642AB0 /* HistoryTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E1A0F3061DE8638A00642AB0 /* HistoryTableViewController.m */; };
+		E1A0F30B1DED6D0200642AB0 /* WeatherParams.m in Sources */ = {isa = PBXBuildFile; fileRef = E1A0F30A1DED6D0200642AB0 /* WeatherParams.m */; };
+		E1A0F3151DEEBFAD00642AB0 /* WeatherRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = E1A0F3141DEEBFAD00642AB0 /* WeatherRequest.m */; };
+		E1A0F31D1DEF044900642AB0 /* HistoryTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E1A0F31C1DEF044900642AB0 /* HistoryTableViewCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -21,13 +27,23 @@
 		E1A0F2E61DE825F400642AB0 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		E1A0F2E81DE825F400642AB0 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		E1A0F2E91DE825F400642AB0 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		E1A0F2EB1DE825F400642AB0 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		E1A0F2EC1DE825F400642AB0 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		E1A0F2EB1DE825F400642AB0 /* WeatherViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WeatherViewController.h; sourceTree = "<group>"; };
+		E1A0F2EC1DE825F400642AB0 /* WeatherViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WeatherViewController.m; sourceTree = "<group>"; };
 		E1A0F2EF1DE825F400642AB0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		E1A0F2F21DE825F400642AB0 /* CurrentWeather.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CurrentWeather.xcdatamodel; sourceTree = "<group>"; };
 		E1A0F2F41DE825F400642AB0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E1A0F2F71DE825F400642AB0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E1A0F2F91DE825F400642AB0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E1A0F3001DE826FF00642AB0 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		E1A0F3021DE8494900642AB0 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		E1A0F3051DE8638A00642AB0 /* HistoryTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HistoryTableViewController.h; sourceTree = "<group>"; };
+		E1A0F3061DE8638A00642AB0 /* HistoryTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HistoryTableViewController.m; sourceTree = "<group>"; };
+		E1A0F3091DED6D0200642AB0 /* WeatherParams.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WeatherParams.h; sourceTree = "<group>"; };
+		E1A0F30A1DED6D0200642AB0 /* WeatherParams.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WeatherParams.m; sourceTree = "<group>"; };
+		E1A0F3131DEEBFAD00642AB0 /* WeatherRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WeatherRequest.h; sourceTree = "<group>"; };
+		E1A0F3141DEEBFAD00642AB0 /* WeatherRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WeatherRequest.m; sourceTree = "<group>"; };
+		E1A0F31B1DEF044900642AB0 /* HistoryTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HistoryTableViewCell.h; sourceTree = "<group>"; };
+		E1A0F31C1DEF044900642AB0 /* HistoryTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HistoryTableViewCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -35,6 +51,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E1A0F3031DE8494900642AB0 /* QuartzCore.framework in Frameworks */,
+				E1A0F3011DE826FF00642AB0 /* CoreLocation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -46,6 +64,7 @@
 			children = (
 				E1A0F2E41DE825F400642AB0 /* CurrentWeather */,
 				E1A0F2E31DE825F400642AB0 /* Products */,
+				E1A0F2FF1DE826FF00642AB0 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -60,10 +79,12 @@
 		E1A0F2E41DE825F400642AB0 /* CurrentWeather */ = {
 			isa = PBXGroup;
 			children = (
+				E1A0F31A1DEF042D00642AB0 /* TableViewCells */,
+				E1A0F3121DEEBF6F00642AB0 /* WeatherRequest */,
+				E1A0F3081DED6CD700642AB0 /* ManagedObjects */,
+				E1A0F3041DE8636900642AB0 /* ViewControllers */,
 				E1A0F2E81DE825F400642AB0 /* AppDelegate.h */,
 				E1A0F2E91DE825F400642AB0 /* AppDelegate.m */,
-				E1A0F2EB1DE825F400642AB0 /* ViewController.h */,
-				E1A0F2EC1DE825F400642AB0 /* ViewController.m */,
 				E1A0F2EE1DE825F400642AB0 /* Main.storyboard */,
 				E1A0F2F41DE825F400642AB0 /* Assets.xcassets */,
 				E1A0F2F61DE825F400642AB0 /* LaunchScreen.storyboard */,
@@ -80,6 +101,53 @@
 				E1A0F2E61DE825F400642AB0 /* main.m */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		E1A0F2FF1DE826FF00642AB0 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E1A0F3021DE8494900642AB0 /* QuartzCore.framework */,
+				E1A0F3001DE826FF00642AB0 /* CoreLocation.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		E1A0F3041DE8636900642AB0 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				E1A0F2EB1DE825F400642AB0 /* WeatherViewController.h */,
+				E1A0F2EC1DE825F400642AB0 /* WeatherViewController.m */,
+				E1A0F3051DE8638A00642AB0 /* HistoryTableViewController.h */,
+				E1A0F3061DE8638A00642AB0 /* HistoryTableViewController.m */,
+			);
+			name = ViewControllers;
+			sourceTree = "<group>";
+		};
+		E1A0F3081DED6CD700642AB0 /* ManagedObjects */ = {
+			isa = PBXGroup;
+			children = (
+				E1A0F3091DED6D0200642AB0 /* WeatherParams.h */,
+				E1A0F30A1DED6D0200642AB0 /* WeatherParams.m */,
+			);
+			name = ManagedObjects;
+			sourceTree = "<group>";
+		};
+		E1A0F3121DEEBF6F00642AB0 /* WeatherRequest */ = {
+			isa = PBXGroup;
+			children = (
+				E1A0F3131DEEBFAD00642AB0 /* WeatherRequest.h */,
+				E1A0F3141DEEBFAD00642AB0 /* WeatherRequest.m */,
+			);
+			name = WeatherRequest;
+			sourceTree = "<group>";
+		};
+		E1A0F31A1DEF042D00642AB0 /* TableViewCells */ = {
+			isa = PBXGroup;
+			children = (
+				E1A0F31B1DEF044900642AB0 /* HistoryTableViewCell.h */,
+				E1A0F31C1DEF044900642AB0 /* HistoryTableViewCell.m */,
+			);
+			name = TableViewCells;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -154,10 +222,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E1A0F2ED1DE825F400642AB0 /* ViewController.m in Sources */,
+				E1A0F2ED1DE825F400642AB0 /* WeatherViewController.m in Sources */,
 				E1A0F2EA1DE825F400642AB0 /* AppDelegate.m in Sources */,
+				E1A0F3151DEEBFAD00642AB0 /* WeatherRequest.m in Sources */,
 				E1A0F2F31DE825F400642AB0 /* CurrentWeather.xcdatamodeld in Sources */,
 				E1A0F2E71DE825F400642AB0 /* main.m in Sources */,
+				E1A0F30B1DED6D0200642AB0 /* WeatherParams.m in Sources */,
+				E1A0F31D1DEF044900642AB0 /* HistoryTableViewCell.m in Sources */,
+				E1A0F3071DE8638A00642AB0 /* HistoryTableViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -223,7 +295,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -265,7 +337,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";

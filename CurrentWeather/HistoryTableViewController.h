@@ -1,5 +1,5 @@
 //
-//  ViewController.h
+//  HistoryTableViewController.h
 //  CurrentWeather
 //
 //  Created by Ekaterina on 25.11.16.
@@ -8,8 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
-
+@interface HistoryTableViewController : UITableViewController
 
 @end
-
