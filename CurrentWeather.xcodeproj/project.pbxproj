@@ -181,7 +181,7 @@
 				TargetAttributes = {
 					E1A0F2E11DE825F400642AB0 = {
 						CreatedOnToolsVersion = 8.0;
-						DevelopmentTeam = SEUUY5JL47;
+						DevelopmentTeam = 8DKJ29P3N2;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -349,7 +349,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = SEUUY5JL47;
+				DEVELOPMENT_TEAM = 8DKJ29P3N2;
 				INFOPLIST_FILE = CurrentWeather/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.TestApp.CurrentWeather;
@@ -361,7 +361,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = SEUUY5JL47;
+				DEVELOPMENT_TEAM = 8DKJ29P3N2;
 				INFOPLIST_FILE = CurrentWeather/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.TestApp.CurrentWeather;
@@ -388,6 +388,7 @@
 				E1A0F2FE1DE825F400642AB0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 

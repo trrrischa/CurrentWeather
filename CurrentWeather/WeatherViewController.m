@@ -9,7 +9,7 @@
 #import "WeatherViewController.h"
 #import "CoreLocation/CoreLocation.h"
 
-@interface WeatherViewController ()
+@interface WeatherViewController () <CLLocationManagerDelegate>
 
 @property (nonatomic, strong) CLLocationManager *locationManager;
 @property (nonatomic) WeatherParams *currentWeather;
@@ -37,8 +37,12 @@
     // Do any additional setup after loading the view, typically from a nib.
     
     self.locationManager = [[CLLocationManager alloc] init];
+    self.locationManager.delegate = self;
     self.locationManager.distanceFilter = kCLDistanceFilterNone; // whenever we move
     self.locationManager.desiredAccuracy = kCLLocationAccuracyHundredMeters; // 100 m
+    [self.locationManager requestWhenInUseAuthorization];
+    [self.locationManager startUpdatingLocation];
+
     
     [self UpdateWeather];
     
@@ -67,7 +71,6 @@
 - (void) UpdateWeather {
     
     [self showActivityViewer];
-    [self.locationManager startUpdatingLocation];
     
     void (^handler)(NSData *data, NSURLResponse *response, NSError *error) = ^(NSData *data, NSURLResponse *response, NSError *error){
         if ([data length] >0 && error == nil)
@@ -76,24 +79,20 @@
             NSObject *jsonObject = [NSJSONSerialization JSONObjectWithData:data options:0 error:&localError];
             if (([jsonObject isKindOfClass:[NSDictionary class]]) && (localError == nil)) {
                 NSLog(@"%@",jsonObject);
-                self.currentWeather = [WeatherParams loadWithDictionary:(NSDictionary*)jsonObject];
                 if ([[NSUserDefaults standardUserDefaults] valueForKey:@"temperature"]) {
                     //check the difference between current temperature and previous
                     double prevTemperature = [[[NSUserDefaults standardUserDefaults] valueForKey:@"temperature"] doubleValue];
                     double diff = prevTemperature - self.currentWeather.temperature;
                     if (diff > 3) {
                         [self showMessage:[NSString stringWithFormat:@"temperature has decreased by %1.1f degrees",diff]];
-                    }                    
-                    
+                    }
                 }
                 [[NSUserDefaults standardUserDefaults] setValue:[NSString stringWithFormat:@"%1.1f",self.currentWeather.temperature] forKey:@"temperature"];
                 dispatch_async(dispatch_get_main_queue(), ^{
+                    self.currentWeather = [WeatherParams loadWithDictionary:(NSDictionary*)jsonObject];
                     [self UpdateControls];
                 });
-                
             }
-            
-            
         }
         else if ([data length] == 0 && error == nil)
         {
@@ -102,15 +101,11 @@
         else if (error != nil){
             NSLog(@"Error = %@", error);
         }
-        
+
     };
-    
-    
-    
     [WeatherRequest sendWeatherRequestWithLattitude:self.locationManager.location.coordinate.latitude
                                          Longtitude:self.locationManager.location.coordinate.longitude
                                   completionHandler:handler];
-    [self.locationManager stopUpdatingLocation];
 
     
 }
@@ -164,5 +159,51 @@
     
     
 }
+//#pragma mark - LocationManager delegate
+//- (void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations {
+//    [self.locationManager stopUpdatingLocation];
+//
+//    void (^handler)(NSData *data, NSURLResponse *response, NSError *error) = ^(NSData *data, NSURLResponse *response, NSError *error){
+//        if ([data length] >0 && error == nil)
+//        {
+//            NSError *localError = nil;
+//            NSObject *jsonObject = [NSJSONSerialization JSONObjectWithData:data options:0 error:&localError];
+//            if (([jsonObject isKindOfClass:[NSDictionary class]]) && (localError == nil)) {
+//                NSLog(@"%@",jsonObject);
+//                self.currentWeather = [WeatherParams loadWithDictionary:(NSDictionary*)jsonObject];
+//                if ([[NSUserDefaults standardUserDefaults] valueForKey:@"temperature"]) {
+//                    //check the difference between current temperature and previous
+//                    double prevTemperature = [[[NSUserDefaults standardUserDefaults] valueForKey:@"temperature"] doubleValue];
+//                    double diff = prevTemperature - self.currentWeather.temperature;
+//                    if (diff > 3) {
+//                        [self showMessage:[NSString stringWithFormat:@"temperature has decreased by %1.1f degrees",diff]];
+//                    }
+//                    
+//                }
+//                [[NSUserDefaults standardUserDefaults] setValue:[NSString stringWithFormat:@"%1.1f",self.currentWeather.temperature] forKey:@"temperature"];
+//                dispatch_async(dispatch_get_main_queue(), ^{
+//                    [self UpdateControls];
+//                });
+//                
+//            }
+//            
+//            
+//        }
+//        else if ([data length] == 0 && error == nil)
+//        {
+//            NSLog(@"Nothing was downloaded.");
+//        }
+//        else if (error != nil){
+//            NSLog(@"Error = %@", error);
+//        }
+//        
+//    };
+//    
+//    [WeatherRequest sendWeatherRequestWithLattitude:self.locationManager.location.coordinate.latitude
+//                                         Longtitude:self.locationManager.location.coordinate.longitude
+//                                  completionHandler:handler];
+//    
+//
+//}
 
 @end
